@@ -44,12 +44,14 @@ const data = {
 
 // 事件
 Object.assign(App.prototype,{
+    // 点击复制内容
     handleCopy(field){
         console.log(field)
         let temp = `[${data[field]}(${field})]`
         console.log(temp)
         clipboard.writeText(temp)
     },
+    // 去除value和补充value
     handleControl(field) {
         let {
           currentMessage,
@@ -73,6 +75,7 @@ Object.assign(App.prototype,{
 })
 //受控组件
 Object.assign(App.prototype, {
+  // 假设没有受控组件 那么textArea值是写死的
     handleInput(field, e) {
       this.setState({
         [field]: e.target.value
